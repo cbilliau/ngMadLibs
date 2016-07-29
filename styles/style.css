@@ -1,0 +1,47 @@
+/*.container {
+    margin: 20px 20px;
+    height: auto;
+    width: auto;
+    max-width: 800px;
+    border: red 1px solid;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}*/
+
+.titleArea	{
+	border: black 1px solid;
+	width: 600px;
+	display: inline-block;
+	text-align: center;
+	box-sizing: border-box;
+}
+
+.smileyFace {
+	border: black 1px solid;
+	display: inline-block;
+}
+
+.logoArea {
+	display: inline-block;
+	text-align: center;
+
+}
+
+.form {
+    border: black 1px solid;
+    width: 600px;
+		text-align: center;
+		padding: 10px 0 20px 0;
+		box-sizing: border-box;
+
+}
+.text {
+    border: black 1px solid;
+    width: 600px;
+		text-align: center;
+		box-sizing: border-box;
+		padding: 20px 20px;
+
+
+}
