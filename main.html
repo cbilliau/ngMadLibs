@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="">
+<html lang="en" ng-app="textApp">
 
 <head>
 	<link rel="stylesheet" type="text/css" href="styles/style.css">
@@ -8,7 +8,7 @@
 	<title>ngMadLibs</title>
 </head>
 
-<body>
+<body ng-controller="myCtrl">
 	<div class="container">
 		<div class="titleArea">
 			<img class="smileyFace" src="img/mad-lib-happy-face.png" alt="MadLib Happy Face" width="100">
@@ -20,24 +20,24 @@
 		</div>
 		<div class="form">
 			<h3>Provide the following words:</h3>
-			<input type="text" placeholder="Female Name" ng-model="femaleName" />
-			<input type="text" placeholder="Job Title" ng-model="jobTitle" />
-			<input type="text" placeholder="Tedious Task" ng-model="tediousTask" />
+			<input type="text" placeholder="Female Name" ng-model="myForm.femaleName" />
+			<input type="text" placeholder="Job Title" ng-model="myForm.jobTitle" />
+			<input type="text" placeholder="Tedious Task" ng-model="myForm.tediousTask" />
 			<br>
-			<input type="text" placeholder="Dirty Task" ng-model="dirtyTask" />
-			<input type="text" placeholder="Celebrity" ng-model="celebrity" />
-			<input type="text" placeholder="Useles Skill" ng-model="uselessSkill" />
+			<input type="text" placeholder="Dirty Task" ng-model="myForm.dirtyTask" />
+			<input type="text" placeholder="Celebrity" ng-model="myForm.celebrity" />
+			<input type="text" placeholder="Useles Skill" ng-model="myForm.uselessSkill" />
 			<br>
-			<input type="text" placeholder="Adjective" ng-model="adjective" />
-			<input type="text" placeholder="Obnoxious Celebrity" ng-model="obnoxiousCelebrity" />
-			<input type="text" placeholder="Huge Number" ng-model="hugeNumber" />
+			<input type="text" placeholder="Adjective" ng-model="myForm.adjective" />
+			<input type="text" placeholder="Obnoxious Celebrity" ng-model="myForm.obnoxiousCelebrity" />
+			<input type="text" placeholder="Huge Number" ng-model="myForm.hugeNumber" />
 		</div>
 
 		<div class="text">
-			<p><u>__{{femaleName}}__</u> was a <u>__{{jobTitle}}__</u> who loved technology. Although she loved parts of her job, she absolutely hated <u>__{{tediousTask}}__</u> and <u>__{{dirtyTask}}__</u>. So, <u>__{{femaleName}}__</u> met with her life mentor
-				<u>__{{celebrity}}__</u> who told her to learn how to <u>__{{uselessSkill}}__</u> with Thinkful. Thinkful didn't offer a course on <u>__{{uselessSkill}}__</u> so she studied programming instead. </p>
+			<p><u>__{{myForm.femaleName}}__</u> was a <u>__{{myForm.jobTitle}}__</u> who loved technology. Although she loved parts of her job, she absolutely hated <u>__{{myForm.tediousTask}}__</u> and <u>__{{myForm.dirtyTask}}__</u>. So, <u>__{{myForm.femaleName}}__</u> met with her life mentor
+				<u>__{{myForm.celebrity}}__</u> who told her to learn how to <u>__{{myForm.uselessSkill}}__</u> with Thinkful. Thinkful didn't offer a course on <u>__{{myForm.uselessSkill}}__</u> so she studied programming instead. </p>
 
-			<p>What a great decision! With her new skills, <u>__{{femaleName}}__</u> built a(n) <u>__{{adjective}}__</u> robot named <u>__{{obnoxiousCelebrity}}__</u> that not only loved <u>__{{dirtyTask}}__</u> but did it <u>__{{hugeNumber}}__</u> times faster. </p>
+			<p>What a great decision! With her new skills, <u>__{{myForm.femaleName}}__</u> built a(n) <u>__{{myForm.adjective}}__</u> robot named <u>__{{myForm.obnoxiousCelebrity}}__</u> that not only loved <u>__{{myForm.dirtyTask}}__</u> but did it <u>__{{myForm.hugeNumber}}__</u> times faster. </p>
 		</div>
 	</div>
 </body>
