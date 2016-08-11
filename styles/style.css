@@ -25,7 +25,6 @@
 .logoArea {
 	display: inline-block;
 	text-align: center;
-
 }
 
 .form {
@@ -34,14 +33,26 @@
 		text-align: center;
 		padding: 10px 0 20px 0;
 		box-sizing: border-box;
-
 }
+
 .text {
     border: black 1px solid;
     width: 600px;
 		text-align: center;
 		box-sizing: border-box;
 		padding: 20px 20px;
+}
 
+.button	{
+		width: 150px;
+		background-color: pink;
+		border: grey 1px solid;
+		color: red;
+		padding: 5px 2px;
+		text-align: center;
+		display: block;
+		font-size: 16px;
+		margin: 10px auto 0 ;
+		cursor: pointer;
 
 }

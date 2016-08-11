@@ -4,43 +4,54 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="styles/style.css">
 	<script data-require="angular.js@1.3.10" data-semver="1.3.10" src="https://code.angularjs.org/1.3.10/angular.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular-messages.js"></script>
 	<script type="text/javascript" src="js/script.js"></script>
-	<title>ngMadLibs</title>
+	<title>{{ vm.msg }}}}</title>
 </head>
 
 <body ng-controller="RootCtrl as rootVm">
 	<div class="container">
+
 		<div class="titleArea">
 			<img class="smileyFace" src="img/mad-lib-happy-face.png" alt="MadLib Happy Face" width="100">
 			<div class="logoArea">
 				<img class="logo" src="img/ng-mad-libs-logo.png" alt="MadLib Logo" width="200">
-				<h1>{{rootVm.msg}}</h1>
+				<h1>Automate This!</h1>
 			</div>
 		</div>
 
-		<form class="form">
-			<input type='radio' ng-model="gender" value='male'/> male
-			<input type='radio' ng-model="gender" value='female'/> female
+		<form class="form" name="madForm" novalidate ng-submit="submit()">
+			<p>Choose Gender:</p>
+			<input type='radio' ng-model="gender" value='male' /> male
+			<input type='radio' ng-model="gender" value='female' checked="checked" /> female
 			<h3>Provide the following words:</h3>
-			<input type="text" placeholder="Name" ng-model="name" />
-			<input type="text" placeholder="Job Title" ng-model="jobTitle" />
-			<input type="text" placeholder="Tedious Task" ng-model="tediousTask" />
+			<input type="text" placeholder="Name" ng-model="name" required/>
+			<input type="text" placeholder="Job Title" ng-model="jobTitle" required/>
+			<input type="text" placeholder="Tedious Task" ng-model="tediousTask" required/>
 			<br>
-			<input type="text" placeholder="Dirty Task" ng-model="dirtyTask" />
-			<input type="text" placeholder="Celebrity" ng-model="celebrity" />
-			<input type="text" placeholder="Useles Skill" ng-model="uselessSkill" />
+			<input type="text" placeholder="Dirty Task" ng-model="dirtyTask" required/>
+			<input type="text" placeholder="Celebrity" ng-model="celebrity" required/>
+			<input type="text" placeholder="Useles Skill" ng-model="uselessSkill" required/>
 			<br>
-			<input type="text" placeholder="Adjective" ng-model="adjective" />
-			<input type="text" placeholder="Obnoxious Celebrity" ng-model="obnoxiousCelebrity" />
-			<input type="text" placeholder="Huge Number" ng-model="hugeNumber" />
+			<input type="text" placeholder="Adjective" ng-model="adjective" required/>
+			<input type="text" placeholder="Obnoxious Celebrity" ng-model="obnoxiousCelebrity" required/>
+			<input type="text" placeholder="Huge Number" ng-model="hugeNumber" required ng-pattern="/^\d+$/"/>
+
+			<input type="submit" value="Generate MadLib" class="button" />
+
 		</form>
 
 		<div class="text">
-			<p><u>__{{name}}__</u> was a <u>__{{jobTitle}}__</u> who loved technology. Although {{gender === 'male' ? 'he' : 'she'}} loved parts of {{gender === 'male' ? 'his' : 'her'}} job, {{gender === 'male' ? 'he' : 'she'}} absolutely hated <u>__{{tediousTask}}__</u> and <u>__{{dirtyTask}}__</u>. So, <u>__{{femaleName}}__</u>				met with {{gender === 'male' ? 'his' : 'her'}} life mentor
-				<u>__{{celebrity}}__</u> who told {{gender === 'male' ? 'his' : 'her'}} to learn how to <u>__{{uselessSkill}}__</u> with Thinkful. Thinkful didn't offer a course on <u>__{{uselessSkill}}__</u> so {{gender === 'male' ? 'he' : 'she'}} studied programming instead. </p>
+			<p><u>__{{name}}__</u> was a <u>__{{jobTitle}}__</u> who loved technology. Although {{gender === 'male' ? 'he' : 'she'}} loved parts of {{gender === 'male' ? 'his' : 'her'}} job, {{gender === 'male' ? 'he' : 'she'}} absolutely hated <u>__{{tediousTask}}__</u>				and <u>__{{dirtyTask}}__</u>. So, <u>__{{femaleName}}__</u> met with {{gender === 'male' ? 'his' : 'her'}} life mentor
+				<u>__{{celebrity}}__</u> who told {{gender === 'male' ? 'his' : 'her'}} to learn how to <u>__{{uselessSkill}}__</u> with Thinkful. Thinkful didn't offer a course on <u>__{{uselessSkill}}__</u> so {{gender === 'male' ? 'he' : 'she'}} studied programming
+				instead. </p>
 
 			<p>What a great decision! With {{gender === 'male' ? 'his' : 'her'}} new skills, <u>__{{femaleName}}__</u> built a(n) <u>__{{adjective}}__</u> robot named <u>__{{obnoxiousCelebrity}}__</u> that not only loved <u>__{{dirtyTask}}__</u> but did it <u>__{{hugeNumber}}__</u>				times faster. </p>
+
+			<input type="submit" value="Start Over" class="button" />
+
 		</div>
+
 	</div>
 </body>
 
