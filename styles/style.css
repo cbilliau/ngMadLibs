@@ -1,13 +1,13 @@
-/*.container {
+.container {
     margin: 20px 20px;
     height: auto;
     width: auto;
     max-width: 800px;
-    border: red 1px solid;
+    /*border: red 1px solid;*/
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-}*/
+}
 
 .titleArea	{
 	border: black 1px solid;
