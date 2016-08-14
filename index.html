@@ -4,7 +4,8 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="styles/style.css">
 	<script data-require="angular.js@1.3.10" data-semver="1.3.10" src="https://code.angularjs.org/1.3.10/angular.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular-messages.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.10/angular-messages.js"></script>
+	<script type="text/javascript" src="https://code.angularjs.org/1.3.10/angular-animate.js"></script>
 	<script type="text/javascript" src="js/script.js"></script>
 	<title>ngMadLibs</title>
 </head>
@@ -55,14 +56,14 @@
 			</form>
 		</div>
 
-		<div ng-show="showResults" class="text">
+		<div ng-hide="!showResults" class="text">
 			<p><u>__{{name}}__</u> was a <u>__{{jobTitle}}__</u> who loved technology. Although {{gender === 'male' ? 'he' : 'she'}} loved parts of {{gender === 'male' ? 'his' : 'her'}} job, {{gender === 'male' ? 'he' : 'she'}} absolutely hated <u>__{{tediousTask}}__</u>				and <u>__{{dirtyTask}}__</u>. So, <u>__{{name}}__</u> met with {{gender === 'male' ? 'his' : 'her'}} life mentor
 				<u>__{{celebrity}}__</u> who told {{gender === 'male' ? 'his' : 'her'}} to learn how to <u>__{{uselessSkill}}__</u> with Thinkful. Thinkful didn't offer a course on <u>__{{uselessSkill}}__</u> so {{gender === 'male' ? 'he' : 'she'}} studied programming
 				instead. </p>
 
 			<p>What a great decision! With {{gender === 'male' ? 'his' : 'her'}} new skills, <u>__{{name}}__</u> built a(n) <u>__{{adjective}}__</u> robot named <u>__{{obnoxiousCelebrity}}__</u> that not only loved <u>__{{dirtyTask}}__</u> but did it <u>__{{hugeNumber}}__</u>				times faster. </p>
 
-			<input ng-click="showResults = !showResults" type="submit" value="Start Over" class="button" />
+			<input ng-click="showResults = !showResults; reset()" type="submit" value="Start Over" class="button" />
 
 		</div>
 
