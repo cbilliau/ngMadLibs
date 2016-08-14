@@ -4,55 +4,62 @@
     width: auto;
     max-width: 800px;
     /*border: red 1px solid;*/
-    display: flex;
+    /*display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: wrap;*/
 }
-
-.titleArea	{
-	border: black 1px solid;
-	width: 600px;
-	display: inline-block;
-	text-align: center;
-	box-sizing: border-box;
+.titleArea {
+    border: black 1px solid;
+    width: 600px;
+    display: inline-block;
+    text-align: center;
+    box-sizing: border-box;
 }
-
 .smileyFace {
-	border: black 1px solid;
-	display: inline-block;
+    border: black 1px solid;
+    display: inline-block;
 }
-
 .logoArea {
-	display: inline-block;
-	text-align: center;
+    display: inline-block;
+    text-align: center;
 }
-
 .form {
     border: black 1px solid;
     width: 600px;
-		text-align: center;
-		padding: 10px 0 20px 0;
-		box-sizing: border-box;
+    text-align: center;
+    padding: 10px 0 20px 0;
+    box-sizing: border-box;
+    transition: all linear .5s;
 }
 
+.form.ng-hide-remove, .form.ng-hide-add.ng-hide-add-active {
+    width: 0;
+}
+.form.ng-hide-add, .form.ng-hide-remove.ng-hide-remove-active {
+    width: 600px%;
+}
 .text {
     border: black 1px solid;
     width: 600px;
-		text-align: center;
-		box-sizing: border-box;
-		padding: 20px 20px;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 20px 20px;
 }
-
-.button	{
-		width: 150px;
-		background-color: pink;
-		border: grey 1px solid;
-		color: red;
-		padding: 5px 2px;
-		text-align: center;
-		display: block;
-		font-size: 16px;
-		margin: 10px auto 0 ;
-		cursor: pointer;
-
+.text.ng-hide-remove, .text.ng-hide-add.ng-hide-add-active {
+    width: 0;
+}
+.text.ng-hide-add, .text.ng-hide-remove.ng-hide-remove-active {
+    width: 600px;
+}
+.button {
+    width: 150px;
+    background-color: pink;
+    border: grey 1px solid;
+    color: red;
+    padding: 5px 2px;
+    text-align: center;
+    display: block;
+    font-size: 16px;
+    margin: 10px auto 0;
+    cursor: pointer;
 }

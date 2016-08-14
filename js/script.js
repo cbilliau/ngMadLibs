@@ -4,6 +4,7 @@ angular.module('textApp', ['ngMessages', 'ngAnimate'])
         this.msg = 'Automate This!';
         $scope.showResults = false;
         $scope.showForm = true;
+				$scope.formInvalid = false;
 
         //Eval data submitted from madForm
         $scope.submit = function() {
@@ -11,6 +12,7 @@ angular.module('textApp', ['ngMessages', 'ngAnimate'])
                 $scope.showResults = true;
             } else {
                 $scope.showResults = false;
+								$scope.formInvalid = true
             }
         };
 

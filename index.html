@@ -3,9 +3,9 @@
 
 <head>
 	<link rel="stylesheet" type="text/css" href="styles/style.css">
-	<script data-require="angular.js@1.3.10" data-semver="1.3.10" src="https://code.angularjs.org/1.3.10/angular.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.10/angular-messages.js"></script>
-	<script type="text/javascript" src="https://code.angularjs.org/1.3.10/angular-animate.js"></script>
+	<script data-require="angular.js@1.3.11" data-semver="1.3.11" src="https://code.angularjs.org/1.3.11/angular.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular-messages.js"></script>
+	<script data-require="angular-animate@1.3.11" data-semver="1.3.11" src="https://code.angularjs.org/1.3.11/angular-animate.js"></script>
 	<script type="text/javascript" src="js/script.js"></script>
 	<title>ngMadLibs</title>
 </head>
@@ -22,8 +22,8 @@
 		</div>
 
 		<!-- Form -->
-		<div ng-hide="showResults">
-			<form class="form" name="madForm" novalidate ng-submit="submit()">
+		<div ng-hide="showResults" class="form">
+			<form name="madForm" novalidate ng-submit="submit()">
 
 				<p>Choose Gender:</p>
 				<input type="radio" ng-model="gender" value="male" /> male
@@ -43,13 +43,13 @@
 				<input type="text" placeholder="Huge Number" ng-model="hugeNumber" required ng-pattern="/^\d+$/" />
 
 				<!-- Submit Button -->
-				<div ng-if="madForm.$valid">
+				<!-- <div ng-if="madForm.$valid"> -->
 					<input type="submit" value="Generate MadLib" class="button" />
-				</div>
+				<!-- </div> -->
 
 
 				<!-- Form Validation -->
-				<div ng-if="madForm.$invalid" ng-messages="madForm.$error">
+				<div ng-if="formInvalid" ng-messages="madForm.$error">
 					<span class="error" ng-message="required">All fields are required!</span>
 					<span class="error" ng-message="pattern">Field requires a number!</span>
 				</div>
